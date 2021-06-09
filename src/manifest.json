@@ -1,7 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Extension with React & Webpack",
-  "options_page": "options.html",
+  "name": "Todo-list",
   "background": {
     "service_worker": "background.bundle.js"
   },
@@ -18,7 +17,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "content.styles.css",
         "icon-128.png",
         "icon-34.png"
       ],
