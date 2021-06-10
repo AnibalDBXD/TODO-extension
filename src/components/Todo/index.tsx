@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from '../Switch';
 import List from './List';
-import "./index.scss"
+import "./index.scss";
 
 const Todo = () => {
     return (

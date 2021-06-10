@@ -1,0 +1,26 @@
+.listItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.listItem__name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listItem__delete {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+}
+
+.listItem__delete img{
+    width: inherit;
+    height: inherit;
+}
