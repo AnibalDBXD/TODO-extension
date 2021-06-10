@@ -12,3 +12,14 @@
     position: fixed;
     right: 16px;
 }
+
+.InputContainer {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    justify-content: center;
+}
+
+.InputContainer input {
+    width: 40%;
+}
