@@ -1,0 +1,8 @@
+.Input{
+    border-radius: 10%;
+    border: 3px solid #ccc;
+    &:focus {
+        outline: none;
+        border: 3px solid #2196F3
+    }
+}
