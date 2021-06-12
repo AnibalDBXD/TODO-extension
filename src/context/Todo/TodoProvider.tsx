@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useReducer } from "react";
+import { INote } from "../../components/Todo/types";
 import TodoActions from "./TodoActions";
 import { initialState, TodoContext } from "./TodoContext";
 import TodoReducer from "./TodoReducer";
@@ -26,12 +27,23 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
         dispatch({ payload: newMode, type: TodoActions.SET_DARK });
     }
 
+    const addNote = (newNote: INote): void => {
+        dispatch({ payload: newNote, type: TodoActions.ADD_DARK });
+    }
+
+    const deleteNote = (noteName: string): void => {
+        const newItems = state.Items.filter((notes) => notes.name !== noteName);
+        dispatch({ payload: newItems, type: TodoActions.SET_ITEMS });
+    }
+
     return (
         <TodoContext.Provider
             value={{
                 Items: state.Items,
                 isDark: state.isDark,
-                setDark
+                setDark,
+                addNote,
+                deleteNote
             }}>
             {children}
         </TodoContext.Provider>

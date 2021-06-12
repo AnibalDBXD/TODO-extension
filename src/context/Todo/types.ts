@@ -5,9 +5,11 @@ export interface ITodoState {
     isDark: boolean;
     Items: INote[];
     setDark?: (newMode: boolean) => void;
+    addNote?: (newNote: INote) => void;
+    deleteNote?: (noteName: string) => void;
 }
 
 export interface ITodoActions {
     type: TodoActions;
-    payload: INote[] | boolean;
+    payload: INote[] | boolean | INote;
 }

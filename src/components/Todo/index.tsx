@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import Switch from '../Switch';
 import List from './List';
 import Input from '../Input';
@@ -8,9 +8,14 @@ import "./index.scss";
 
 
 const Todo = () => {
-    const { isDark } = useTodoContext();
+    const { isDark, addNote } = useTodoContext();
     const [search, setSearch] = useState("");
     const [create, setCreate] = useState("");
+
+    const handleCreate = (e: FormEvent) => {
+        e.preventDefault();
+        addNote?.({ name: create, checked: false });
+    }
 
     return (
         <div className={isDark ? "TodoContainer--dark" : "TodoContainer--light"}>
@@ -20,9 +25,9 @@ const Todo = () => {
             </div>
             <div className="InputContainer">
                 <Input value={search} setValue={setSearch} placeholder="Search" />
-                <form className="createForm">
+                <form onSubmit={handleCreate} className="createForm">
                     <Input value={create} setValue={setCreate} placeholder="Create" />
-                    {create !== "" && <button className="createForm__Button"><img src={add} alt="Add" /></button>}
+                    {create !== "" && <button onSubmit={handleCreate} className="createForm__Button"><img src={add} alt="Add" /></button>}
                 </form>
             </div>
             <List />
