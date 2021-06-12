@@ -15,6 +15,7 @@ const Todo = () => {
     const handleCreate = (e: FormEvent) => {
         e.preventDefault();
         addNote?.({ name: create });
+        setCreate("");
     }
 
     return (
