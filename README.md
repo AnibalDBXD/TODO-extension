@@ -14,4 +14,4 @@
 
 # Special thanks
 
-Special thanks to [@lxieyang][https://github.com/lxieyang/chrome-extension-boilerplate-react] who created the boirletplate that i used
+Special thanks to [@lxieyang](https://github.com/lxieyang/chrome-extension-boilerplate-react) who created the boirletplate that i used
