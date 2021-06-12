@@ -5,6 +5,7 @@ import Input from '../Input';
 import { useTodoContext } from '../../context/Todo/TodoContext';
 import add from "../../assets/img/add.svg"
 import "./index.scss";
+import Clear from '../Clear';
 
 
 const Todo = () => {
@@ -32,6 +33,7 @@ const Todo = () => {
                 </form>
             </div>
             <List />
+            <Clear />
         </div>
     );
 };

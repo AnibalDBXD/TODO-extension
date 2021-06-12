@@ -39,6 +39,11 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
         chrome.storage.local.set({ items: newItems });
     }
 
+    const reset = (): void => {
+        dispatch({ payload: null, type: TodoActions.RESET });
+        chrome.storage.local.clear()
+    }
+
     return (
         <TodoContext.Provider
             value={{
@@ -46,7 +51,8 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
                 isDark: state.isDark,
                 setDark,
                 addNote,
-                deleteNote
+                deleteNote,
+                reset
             }}>
             {children}
         </TodoContext.Provider>
