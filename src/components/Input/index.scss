@@ -1,8 +1,14 @@
 .Input{
     border-radius: 10%;
+    height: 20px;
     border: 3px solid #ccc;
     &:focus {
         outline: none;
         border: 3px solid #2196F3
     }
+}
+
+.input--dark {
+    background-color: #282828;
+    color: #9B9B9B;
 }

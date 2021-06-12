@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.header--dark {
+    color: white;
+}
+
 .header h1 {
     font-size: 18px;
 }
@@ -18,8 +22,35 @@
     gap: 8px;
     padding: 8px;
     justify-content: center;
+    align-items: center;
 }
 
 .InputContainer input {
-    width: 40%;
+    width: 100px;
+}
+
+.TodoContainer--dark {
+    background-color: #121212;
+    height: 100vh;
+}
+
+.TodoContainer--light {
+    background-color: white;
+    height: 100vh;
+}
+
+.createForm{
+    display: flex;
+}
+
+.createForm__Button{
+    padding: 0;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    margin-left: 5px;
 }

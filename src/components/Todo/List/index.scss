@@ -1,4 +1,28 @@
 .list{
     list-style: none;
     padding: 0;
+    font-size: 14px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 9px;
+        height: 9px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #CCC;
+        border-radius: 15px;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background: #bababa;
+    }
+    &::-webkit-scrollbar-track{
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: inset 7px 10px 12px #f0f0f0;
+    }
+}
+
+.list--dark{
+    color: white;
 }

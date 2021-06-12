@@ -7,6 +7,8 @@
 .listItem__name{
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 100px;
+    text-align: center;
 }
 
 .listItem__delete {
