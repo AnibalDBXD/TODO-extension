@@ -1,4 +1,5 @@
-# Chrome Extension with React 17(Typescript) and Webpack 5
+# TODO-LIST
+Chrome Extension with React 17(Typescript) and Webpack 5
 
 ## Installing and Running
 
