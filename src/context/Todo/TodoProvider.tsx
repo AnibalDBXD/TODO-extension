@@ -35,7 +35,9 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
 
     const deleteNote = (noteName: string): void => {
         const newItems = state.Items.filter((notes) => notes.name !== noteName);
+        const newSearchItems = state.searchNotes.filter((notes) => notes.name !== noteName);
         dispatch({ payload: newItems, type: TodoActions.SET_ITEMS });
+        dispatch({ payload: newSearchItems, type: TodoActions.SET_SEARCH_ITEMS });
         chrome.storage.local.set({ items: newItems });
     }
 
