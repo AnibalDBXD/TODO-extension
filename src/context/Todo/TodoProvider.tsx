@@ -25,15 +25,18 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
 
     const setDark = (newMode: boolean): void => {
         dispatch({ payload: newMode, type: TodoActions.SET_DARK });
+        chrome.storage.local.set({ isDark: newMode });
     }
 
     const addNote = (newNote: INote): void => {
         dispatch({ payload: newNote, type: TodoActions.ADD_ITEM });
+        chrome.storage.local.set({ items: [newNote, ...state.Items] });
     }
 
     const deleteNote = (noteName: string): void => {
         const newItems = state.Items.filter((notes) => notes.name !== noteName);
         dispatch({ payload: newItems, type: TodoActions.SET_ITEMS });
+        chrome.storage.local.set({ items: newItems });
     }
 
     return (
