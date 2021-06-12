@@ -7,8 +7,8 @@ const List = () => {
     const { Items, isDark } = useTodoContext()
     return (
         <ul className={`list ${isDark && "list--dark"}`}>
-            {Items.map(({ checked, name }, index) => (
-                <Item checked={checked} key={index}>{name}</Item>
+            {Items.map(({ name }, index) => (
+                <Item key={index}>{name}</Item>
             ))}
         </ul>
     )

@@ -16,7 +16,7 @@ const TodoReducer = (state: ITodoState, action: ITodoActions): ITodoState => {
                 ...state,
                 isDark: payload as boolean
             }
-        case TodoActions.ADD_DARK:
+        case TodoActions.ADD_ITEM:
             return {
                 ...state,
                 Items: [payload, ...state.Items] as INote[]

@@ -28,7 +28,7 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
     }
 
     const addNote = (newNote: INote): void => {
-        dispatch({ payload: newNote, type: TodoActions.ADD_DARK });
+        dispatch({ payload: newNote, type: TodoActions.ADD_ITEM });
     }
 
     const deleteNote = (noteName: string): void => {
