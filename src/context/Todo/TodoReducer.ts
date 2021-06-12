@@ -22,6 +22,11 @@ const TodoReducer = (state: ITodoState, action: ITodoActions): ITodoState => {
                 ...state,
                 Items: [payload, ...state.Items] as INote[]
             }
+        case TodoActions.SET_SEARCH_ITEMS:
+            return {
+                ...state,
+                searchNotes: payload as INote[],
+            }
         case TodoActions.RESET:
             return initialState;
         default:

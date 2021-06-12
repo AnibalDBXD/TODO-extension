@@ -3,7 +3,8 @@ import { ITodoState } from './types';
 
 export const initialState: ITodoState = {
   Items: [],
-  isDark: false
+  isDark: false,
+  searchNotes: []
 };
 
 export const TodoContext = createContext<ITodoState>(initialState);

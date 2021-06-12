@@ -4,6 +4,8 @@ import TodoActions from "./TodoActions";
 export interface ITodoState {
     isDark: boolean;
     Items: INote[];
+    searchNotes: INote[];
+    setSearchNotes?: (newNotes: INote[]) => void;
     setDark?: (newMode: boolean) => void;
     addNote?: (newNote: INote) => void;
     deleteNote?: (noteName: string) => void;

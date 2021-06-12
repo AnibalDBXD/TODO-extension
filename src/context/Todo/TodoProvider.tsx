@@ -44,11 +44,17 @@ const TodoProvider = ({ children }: IProps): JSX.Element => {
         chrome.storage.local.clear()
     }
 
+    const setSearchNotes = (newNotes: INote[]): void => {
+        dispatch({ payload: newNotes, type: TodoActions.SET_SEARCH_ITEMS });
+    }
+
     return (
         <TodoContext.Provider
             value={{
                 Items: state.Items,
                 isDark: state.isDark,
+                searchNotes: state.searchNotes,
+                setSearchNotes,
                 setDark,
                 addNote,
                 deleteNote,

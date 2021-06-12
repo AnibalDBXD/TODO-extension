@@ -4,12 +4,18 @@ import "./index.scss";
 import { useTodoContext } from '../../../context/Todo/TodoContext';
 
 const List = () => {
-    const { Items, isDark } = useTodoContext()
+    const { Items, isDark, searchNotes } = useTodoContext()
     return (
         <ul className={`list ${isDark && "list--dark"}`}>
-            {Items.map(({ name }, index) => (
-                <Item key={index}>{name}</Item>
-            ))}
+            {searchNotes.toString() !== "" ?
+                searchNotes.map(({ name }, index) => (
+                    <Item key={index}>{name}</Item>
+                ))
+                :
+                Items.map(({ name }, index) => (
+                    <Item key={index}>{name}</Item>
+                ))
+            }
         </ul>
     )
 };

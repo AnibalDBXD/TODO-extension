@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Switch from '../Switch';
 import List from './List';
 import Input from '../Input';
@@ -9,7 +9,7 @@ import Clear from '../Clear';
 
 
 const Todo = () => {
-    const { isDark, addNote } = useTodoContext();
+    const { isDark, addNote, Items, setSearchNotes } = useTodoContext();
     const [search, setSearch] = useState("");
     const [create, setCreate] = useState("");
 
@@ -19,6 +19,9 @@ const Todo = () => {
         setCreate("");
     }
 
+    useEffect(() => {
+        setSearchNotes?.(Items.filter((value) => value.name.toLowerCase().includes(search.toLowerCase())));
+    }, [search])
     return (
         <div className={isDark ? "TodoContainer--dark" : "TodoContainer--light"}>
             <div className={`header ${isDark && "header--dark"}`}>
